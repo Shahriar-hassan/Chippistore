@@ -166,6 +166,68 @@
         .assistant:hover {
             transform: scale(1.2) rotate(10deg);
         }
+        .download-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+        }
+        .download-content {
+            background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+            padding: 50px;
+            border-radius: 30px;
+            text-align: center;
+            max-width: 700px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 6px solid #fff;
+        }
+        .assistant-large {
+            width: 250px;
+            margin-bottom: 20px;
+            animation: wave 2s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+        .story-page {
+            display: none;
+            padding: 60px 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .story-content {
+            background: rgba(255,255,255,0.9);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            line-height: 1.8;
+            font-size: 1.3em;
+        }
+        .story-robot {
+            width: 250px;
+            margin: 20px auto;
+            border-radius: 30px;
+            border: 6px solid #fff;
+            box-shadow: 0 10px 20px rgba(106, 27, 154, 0.4);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #555;
+            font-size: 1em;
+            background: rgba(255,255,255,0.6);
+            margin-top: 50px;
+        }
         .info-popup {
             display: none;
             position: fixed;
@@ -199,72 +261,116 @@
             margin-top: 20px;
             cursor: pointer;
         }
-        .story-page, footer { /* existing styles */ }
     </style>
 </head>
 <body>
 
-    <!-- Nav, header, story page, assistant, download popup - unchanged -->
+    <nav>
+        <a href="#" onclick="showHome()">Home</a>
+        <a href="#" onclick="showStory()">Zappy's Daily Story</a>
+    </nav>
 
-    <section class="categories">
-
-        <!-- AI PDFs -->
-        <div class="category">
-            <h2>AI PDFs</h2>
-            <div class="products">
-                <div class="product-card">
-                    <img src="https://uploads.heightsplatform.com/program/public/image/872/upload/eb5288e40ecc271f04cf5398a8dfdd9d.jpg" alt="AI PDF Bundle">
-                    <div class="product-info">
-                        <h3>Ultimate AI Guide PDF</h3>
-                        <p>A comprehensive guide to getting started with AI tools and prompts.</p>
-                        <p class="free-note">FREE Download</p>
-                        <button class="download-btn" onclick="startDownload('Ultimate AI Guide PDF')">Download</button>
-                        <button class="download-btn info-btn" onclick="showInfo('Ultimate AI Guide PDF', 'https://uploads.heightsplatform.com/program/public/image/872/upload/eb5288e40ecc271f04cf5398a8dfdd9d.jpg', '50+ pages of beginner to advanced AI prompts, tools, and tips. Perfect for creators!')">Info</button>
-                    </div>
-                </div>
-                <!-- Add more PDF cards by copying the block above -->
+    <!-- Home Page -->
+    <div id="homePage">
+        <header>
+            <h1>AI Creator's Workshop</h1>
+            <img src="file_00000000198871f8b5360110c4713a93.png" alt="Purple Robot Inventor" class="welcome-robot">
+            <div class="greeting">
+                Welcome to my store! I am Zappy, and I love building amazing things. You will love to see what I have made for you!
             </div>
-        </div>
+        </header>
 
-        <!-- AI Image Bundles -->
-        <div class="category">
-            <h2>AI Image Bundles</h2>
-            <div class="products">
-                <div class="product-card">
-                    <img src="Brown Modern My Accessories Youtube Thumbnail_20251216_222846_0000.png" alt="Winter Male Images">
-                    <div class="product-info">
-                        <h3>Winter Male Fashion Pack</h3>
-                        <p>High-quality AI-generated stock images of men in winter clothing.</p>
-                        <p class="free-note">FREE Download</p>
-                        <a href="ai-winter-male.zip" class="download-btn" style="text-decoration: none; display: inline-block; padding: 12px 24px; margin: 8px 5px;">Download</a>
-                        <button class="download-btn info-btn" onclick="showInfo('Winter Male Fashion Pack', 'Brown Modern My Accessories Youtube Thumbnail_20251216_222846_0000.png', '100+ professional images in various poses and styles. Ideal for clothing brands, ads, and projects!')">Info</button>
+        <section class="categories">
+            <!-- AI PDFs -->
+            <div class="category">
+                <h2>AI PDFs</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://uploads.heightsplatform.com/program/public/image/872/upload/eb5288e40ecc271f04cf5398a8dfdd9d.jpg" alt="AI PDF Bundle">
+                        <div class="product-info">
+                            <h3>Ultimate AI Guide PDF</h3>
+                            <p>A comprehensive guide to getting started with AI tools and prompts.</p>
+                            <p class="free-note">FREE Download</p>
+                            <button class="download-btn" onclick="startDownload('Ultimate AI Guide PDF')">Download</button>
+                            <button class="download-btn info-btn" onclick="showInfo('Ultimate AI Guide PDF', 'https://uploads.heightsplatform.com/program/public/image/872/upload/eb5288e40ecc271f04cf5398a8dfdd9d.jpg', '50+ pages of beginner to advanced AI prompts, tools, and tips. Perfect for creators!')">Info</button>
+                        </div>
                     </div>
+                    <!-- Copy the product-card block above and paste here for more PDFs -->
                 </div>
-                <!-- Add more image bundle cards here -->
             </div>
-        </div>
 
-        <!-- AI Chatbots -->
-        <div class="category">
-            <h2>AI Chatbots</h2>
-            <div class="products">
-                <div class="product-card">
-                    <img src="https://www.slideteam.net/media/catalog/product/cache/1280x720/a/i/ai_chatbot_powerpoint_ppt_template_bundles_slide01.jpg" alt="AI Chatbot">
-                    <div class="product-info">
-                        <h3>Custom AI Chatbot Script</h3>
-                        <p>Ready-to-use chatbot for customer support or fun interactions.</p>
-                        <p class="free-note">FREE Download</p>
-                        <button class="download-btn" onclick="startDownload('Custom AI Chatbot Script')">Download</button>
-                        <button class="download-btn info-btn" onclick="showInfo('Custom AI Chatbot Script', 'https://www.slideteam.net/media/catalog/product/cache/1280x720/a/i/ai_chatbot_powerpoint_ppt_template_bundles_slide01.jpg', 'Easy-to-customize script with friendly personality. Works on websites or apps!')">Info</button>
+            <!-- AI Image Bundles -->
+            <div class="category">
+                <h2>AI Image Bundles</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="Brown Modern My Accessories Youtube Thumbnail_20251216_222846_0000.png" alt="AI Image Pack">
+                        <div class="product-info">
+                            <h3>Futuristic AI Images Pack</h3>
+                            <p>100 high-quality AI-generated images for your projects.</p>
+                            <p class="free-note">FREE Download</p>
+                            <a href="ai-winter-male.zip" class="download-btn" style="text-decoration: none; display: inline-block; padding: 12px 24px; margin: 8px 5px;">Download</a>
+                            <button class="download-btn info-btn" onclick="showInfo('Futuristic AI Images Pack', 'Brown Modern My Accessories Youtube Thumbnail_20251216_222846_0000.png', '100+ high-quality AI-generated images in futuristic style. Perfect for design projects, wallpapers, and more!')">Info</button>
+                        </div>
                     </div>
+                    <!-- Copy the product-card block above and paste here for more image bundles -->
                 </div>
-                <!-- Add more chatbot cards here -->
             </div>
+
+            <!-- AI Chatbots -->
+            <div class="category">
+                <h2>AI Chatbots</h2>
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://www.slideteam.net/media/catalog/product/cache/1280x720/a/i/ai_chatbot_powerpoint_ppt_template_bundles_slide01.jpg" alt="AI Chatbot">
+                        <div class="product-info">
+                            <h3>Custom AI Chatbot Script</h3>
+                            <p>Ready-to-use chatbot for customer support or fun interactions.</p>
+                            <p class="free-note">FREE Download</p>
+                            <button class="download-btn" onclick="startDownload('Custom AI Chatbot Script')">Download</button>
+                            <button class="download-btn info-btn" onclick="showInfo('Custom AI Chatbot Script', 'https://www.slideteam.net/media/catalog/product/cache/1280x720/a/i/ai_chatbot_powerpoint_ppt_template_bundles_slide01.jpg', 'Easy-to-customize chatbot script with friendly personality. Works on websites or apps!')">Info</button>
+                        </div>
+                    </div>
+                    <!-- Copy the product-card block above and paste here for more chatbots -->
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            © 2025 AI Creator's Workshop - Lovingly built and curated by Zappy. Everything here is FREE for you to enjoy!
+        </footer>
+    </div>
+
+    <!-- Story Page -->
+    <div id="storyPage" class="story-page">
+        <h1>Zappy's Daily Story</h1>
+        <img src="file_00000000198871f8b5360110c4713a93.png" alt="Zappy the Purple Robot" class="story-robot">
+        <div class="story-content">
+            <!-- ★★★ CHANGE THIS TEXT EVERY DAY ★★★ -->
+            <p>Today, Zappy woke up with a brilliant idea! He decided to invent a tiny robot that could paint rainbows in the sky whenever someone felt sad.</p>
+            <p>He worked all morning in his workshop, soldering circuits and programming colorful lights. By afternoon, his new friend "RainbowBot" was ready!</p>
+            <p>Together they flew around, spreading joy and bright colors everywhere. And that's how Zappy made the world a little happier today. 🌈</p>
+            <p><em>Come back tomorrow for a new adventure!</em></p>
+            <!-- ★★★ END OF DAILY STORY ★★★ -->
         </div>
+        <p><a href="#" onclick="showHome()" style="color: #6a1b9a; font-weight: bold; font-size: 1.2em;">← Back to Shop</a></p>
+    </div>
 
-    </section>
+    <!-- Blue Robot Assistant (bottom right) -->
+    <img src="file_000000002d6c71f89904a144f5bc5669.png" alt="Sky Blue Robot Assistant" class="assistant" onclick="openDownloads()">
 
-    <!-- Info Popup -->
+    <!-- Download Popup (blue robot helper) -->
+    <div class="download-page" id="downloadPage">
+        <div class="download-content">
+            <img src="file_000000002d6c71f89904a144f5bc5669.png" alt="Sky Blue Robot" class="assistant-large">
+            <h2>Hi there! I'm your friendly download helper!</h2>
+            <p id="downloadMessage" style="font-size: 1.4em; margin: 20px;">Your free download is ready!</p>
+            <button class="download-btn" onclick="simulateDownload()" style="font-size: 1.3em; padding: 16px 32px;">Click to Download</button>
+            <button onclick="closeDownloads()" style="margin-top: 30px; background: #666; padding: 12px 24px; border-radius: 50px;">Close</button>
+        </div>
+    </div>
+
+    <!-- New Info Popup -->
     <div class="info-popup" id="infoPopup">
         <div class="info-content">
             <h2 id="infoTitle"></h2>
@@ -275,14 +381,35 @@
     </div>
 
     <script>
-        // Existing functions unchanged...
-
+        function showHome() {
+            document.getElementById('homePage').style.display = 'block';
+            document.getElementById('storyPage').style.display = 'none';
+        }
+        function showStory() {
+            document.getElementById('homePage').style.display = 'none';
+            document.getElementById('storyPage').style.display = 'block';
+        }
+        function startDownload(productName) {
+            document.getElementById('downloadMessage').innerText = `"${productName}" is ready! Grab it below! 🎉`;
+            document.getElementById('downloadPage').style.display = 'flex';
+        }
+        function openDownloads() {
+            document.getElementById('downloadMessage').innerText = 'Here are your downloads! Let me help you out! 🤖';
+            document.getElementById('downloadPage').style.display = 'flex';
+        }
+        function closeDownloads() {
+            document.getElementById('downloadPage').style.display = 'none';
+        }
+        function simulateDownload() {
+            alert('Download started! 🚀\n(In a real hosted site, this would download your file directly.)');
+        }
         function showInfo(title, imageSrc, description) {
             document.getElementById('infoTitle').innerText = title;
             document.getElementById('infoImage').src = imageSrc;
             document.getElementById('infoDesc').innerText = description;
             document.getElementById('infoPopup').style.display = 'flex';
         }
+        showHome();
     </script>
 
 </body>
