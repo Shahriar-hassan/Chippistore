@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Bot Access - AI Creator's Workshop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #e0d4ff, #b3e5fc);
+            color: #333;
+            padding: 40px 20px;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #6a1b9a;
+            font-size: 2.8em;
+        }
+        .zappy {
+            width: 200px;
+            border-radius: 30px;
+            border: 6px solid #fff;
+            box-shadow: 0 10px 20px rgba(106, 27, 154, 0.4);
+            margin: 20px auto;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+        .option {
+            background: #f8f5ff;
+            padding: 30px;
+            border-radius: 15px;
+            width: 320px;
+            box-shadow: 0 6px 15px rgba(106, 27, 154, 0.2);
+        }
+        .option h2 {
+            color: #6a1b9a;
+        }
+        .price {
+            font-size: 1.8em;
+            color: #ff6f00;
+            font-weight: bold;
+        }
+        form {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #f9f9ff;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background: #ff6f00;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .note {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+            font-size: 1.1em;
+        }
+        footer {
+            margin-top: 50px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Premium Bot Access</h1>
+        <img src="file_00000000198871f8b5360110c4713a93.png" alt="Zappy" class="zappy">
+        <p>Unlock unlimited access to my powerful AI Product Photo Generator Bot!<br>Perfect for creating ultra-realistic photos for your business products.</p>
+
+        <div class="options">
+            <div class="option">
+                <h2>Bangladesh Users</h2>
+                <p class="price">500 Taka</p>
+                <p>Pay via <strong>bKash / Nagad / Rocket</strong></p>
+                <p>Send to: <strong>01XXXXXXXXX</strong> (replace with your number)</p>
+            </div>
+            <div class="option">
+                <h2>International Users</h2>
+                <p class="price">$10 USD</p>
+                <p>Pay via <strong>PayPal / Payoneer</strong></p>
+                <p>Send to: <strong>yourpaypal@email.com</strong> (replace with your email)</p>
+            </div>
+        </div>
+
+        <div class="note">
+            <p><strong>After payment:</strong> Submit proof below. I will verify within 24 hours and send your private bot link + instructions to your email.</p>
+        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+            <label>Name</label>
+            <input type="text" name="name" required>
+
+            <label>Email (for access)</label>
+            <input type="email" name="email" required>
+
+            <label>Country</label>
+            <select name="country" required>
+                <option>Bangladesh</option>
+                <option>Other</option>
+            </select>
+
+            <label>Payment Method</label>
+            <select name="method" required>
+                <option>bKash</option>
+                <option>Nagad</option>
+                <option>Rocket</option>
+                <option>PayPal</option>
+                <option>Payoneer</option>
+            </select>
+
+            <label>Transaction ID or Screenshot</label>
+            <input type="file" name="proof" accept="image/*" required>
+            <small>Upload clear screenshot of payment confirmation</small>
+
+            <button type="submit">Submit Payment Proof</button>
+        </form>
+
+        <div class="note">
+            <p><strong>Free Trial Available!</strong> Try the bot first on Poe (limited daily uses). Upgrade here for unlimited premium access.</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 AI Creator's Workshop by Zappy • Made with love for creators like you!
+    </footer>
+
+</body>
+</html>
